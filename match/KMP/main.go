@@ -20,7 +20,6 @@ func main() {
 // test
 func test(S string, T string, i int, j int) {
 	if j != -1 { // 测试用
-		time.Sleep(time.Second * 2)
 		for k := 0; k < len(S)-i+j; k++ {
 			fmt.Print(" ")
 		}
@@ -29,7 +28,11 @@ func test(S string, T string, i int, j int) {
 		for k := 0; k < len(S)+j; k++ {
 			fmt.Print(" ")
 		}
-		fmt.Println("|")
+		if S[i] == T[j] {
+			fmt.Println("|")
+		} else {
+			fmt.Println("x")
+		}
 
 		for k := 0; k < len(S); k++ {
 			fmt.Print(" ")
@@ -49,7 +52,8 @@ func KMP(S string, T string) {
 
 	for i < len(S) && j < len(T) { // 朴素模式匹配
 
-		count++          // 测试用
+		count++ // 测试用
+		time.Sleep(time.Second * 1)
 		test(S, T, i, j) // 测试用
 
 		if j == -1 || S[i] == T[j] { // j==-1 为KMP添加
