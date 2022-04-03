@@ -11,8 +11,8 @@ import (
 func main() {
 	S := "ababababx"
 	T := "ababx"
-	S = "aaaabcde"
-	T = "aaaaax"
+	//S = "aaaabcde"
+	//T = "aaaaax"
 	//    -00123112
 	KMP(S, T)
 }
@@ -25,8 +25,11 @@ func test(S string, T string, i int, j int) {
 		}
 		fmt.Println(S)
 
-		for k := 0; k < len(S)+j; k++ {
+		for k := 0; k < len(S); k++ {
 			fmt.Print(" ")
+		}
+		for k := 0; k < j; k++ {
+			fmt.Print("|")
 		}
 		if S[i] == T[j] {
 			fmt.Println("|")
