@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // package main
 
@@ -17,6 +20,7 @@ func main() {
 // test
 func test(S string, T string, i int, j int) {
 	if j != -1 { // 测试用
+		time.Sleep(time.Second * 2)
 		for k := 0; k < len(S)-i+j; k++ {
 			fmt.Print(" ")
 		}
